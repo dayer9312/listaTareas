@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>ListaTareas</title>
+</head>
+<body>
+    <div class="list roundBorder">
+        <div class="date">
+            <div class="dateRight">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+        <form>
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder" data-form-input>
+            <button type="submit" class="addTaskButton" data-form-btn>+</button>
+            <button type="button" class="orderButton roundBorder">Eliminar</button>
+        </form>
+        <ul id="tasksContainer" data-list ></ul>
+    </div>
+    <script src="script.js" type="text/javascript" defer></script>
+</body>
+
+</html>
