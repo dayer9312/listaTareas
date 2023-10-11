@@ -78,6 +78,11 @@ input {
 input:focus {
     outline: none;
 }
+p {
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+}
 
 .addTaskButton,
 .orderButton {
@@ -96,6 +101,9 @@ input:focus {
 .orderButton {
     background-color: var(--secondary);
     color: var(--light);
+    margin-left: 1rem; 
+    width: auto;
+    height: auto;
 }
 
 .task {
@@ -105,9 +113,7 @@ input:focus {
     color: var(--light);
     cursor: pointer;
 }
-
-.done {
-    background-color: var(--diabled);
+.check {
     text-decoration: line-through;
-    color: var(--dark);
 }
+

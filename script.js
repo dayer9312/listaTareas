@@ -1,3 +1,4 @@
+import deleteIcon from "./components/deleteTask.js";
 // Info date
 const dateNumber = document.getElementById('dateNumber');
 const dateText = document.getElementById('dateText');
@@ -39,34 +40,38 @@ const changeTaskState = event => {
         //console.log(input.value); //muestra valor
         const value=input.value;
         const list=document.querySelector('[data-list]');
-        const task=document.createElement('li'); //etiqueta para task
-        task.classList.add('card'); //aniade una clase "card" para task
+        const task = document.createElement('li');
+        const taskContent=document.createElement('div');
+        const dateInformartion = document.createElement('p');
+        var dateHour = new Date();
+        const dateInformartionText = dateNumber.textContent+' '+dateMonth.textContent+' '+dateHour.getHours()+':'+dateHour.getMinutes()+':'+dateHour.getHours();
+        task.classList.add('task', 'roundBorder');
         input.value='';
-        const taskContent=document.createElement('div')
-        const titleTask=document.createElement('span')
-        titleTask.classList.add('task') 
-        titleTask.innerText=value;
-        taskContent.appendChild(checkComplete())
-        taskContent.appendChild(titleTask);//introduce el span dentro del div
-        
-        task.appendChild(taskContent); //introduce el  div dentro del li
-        task.appendChild(deleteIcon())
-        list.appendChild(task); //introdizco el li en el ul
+        task.innerText=value;
+        dateInformartion.innerText = dateInformartionText;
+        taskContent.appendChild(task)
+        taskContent.appendChild(deleteIcon())
+        task.appendChild(dateInformartion)
+        list.appendChild(taskContent);
 
-        const deleteIcon=()=>{
-            const i = document.createElement('i');
-            i.classList.add('fas','fa-trash-alt','trashIcon','icon')
-            i.addEventListener('click',deleteTask);
-            return i;
+        const cheked=(e)=>{
+            var j;
+            if(j){
+                task.classList.add('check');
+                
+            }
+            else{
+                task.classList.add('check');
+            }
+            !j;
+            
         }
-        
-        const deleteTask =(evento)=>{
-            const padre = evento.target.parentElement;
-            padre.remove();
-        }
+        task.addEventListener('click',cheked);
 
     };
-    btn.addEventListener('click',createTask); //para ejecutarse tras un evento
+    
+    btn.addEventListener('click',createTask); 
+    
     
 })();
 
