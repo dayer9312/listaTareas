@@ -44,7 +44,7 @@ const changeTaskState = event => {
         const taskContent=document.createElement('div');
         const dateInformartion = document.createElement('p');
         var dateHour = new Date();
-        const dateInformartionText = dateNumber.textContent+' '+dateMonth.textContent+' '+dateHour.getHours()+':'+dateHour.getMinutes()+':'+dateHour.getHours();
+        const dateInformartionText = dateNumber.textContent+' '+dateMonth.textContent+' '+dateHour.getHours()+':'+dateHour.getMinutes()+':'+dateHour.getUTCSeconds();
         task.classList.add('task', 'roundBorder');
         input.value='';
         task.innerText=value;
